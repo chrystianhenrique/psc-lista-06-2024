@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double[] medias = new double[10];
+        int contadorAprovados = 0;
+        
+        for (int i = 0; i < 10; i++) {
+            double soma = 0;
+            System.out.println("Digite as quatro notas do aluno " + (i + 1) + ":");
+            for (int j = 0; j < 4; j++) {
+                soma += scanner.nextDouble();
+            }
+            medias[i] = soma / 4;
+            if (medias[i] >= 7.0) {
+                contadorAprovados++;
+            }
+        }
+        
+        System.out.println("Número de alunos com média maior ou igual a 7.0: " + contadorAprovados);
+    }
+}
