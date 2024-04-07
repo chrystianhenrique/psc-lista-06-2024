@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        char[] caracteres = new char[10];
+        int consoantes = 0;
+        
+        System.out.println("Digite os 10 caracteres:");
+        for (int i = 0; i < caracteres.length; i++) {
+            caracteres[i] = scanner.next().charAt(0);
+        }
+        
+        System.out.println("As consoantes digitadas são:");
+        for (int i = 0; i < caracteres.length; i++) {
+            if (isConsoante(caracteres[i])) {
+                System.out.println(caracteres[i]);
+                consoantes++;
+            }
+        }
+        
+        System.out.println("Total de consoantes lidas: " + consoantes);
+    }
+    
+    public static boolean isConsoante(char c) {
+        return Character.isLetter(c) && !"AEIOUaeiou".contains(String.valueOf(c));
+    }
+}
